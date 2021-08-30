@@ -1,0 +1,9 @@
+table,
+th,
+td {
+  border: 1px solid rgb(224, 95, 192);
+}
+ul li {
+  padding-left: 10px;
+  
+}
