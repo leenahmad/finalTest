@@ -26,12 +26,12 @@ function Names(name , age ,phone, frinedName){
     let stringObj = localStorage.getItem('final');
     let normalObj = JSON.parse(stringObj);
   
-    // if(normalObj){
+    if(normalObj){
   
-    //   final = normalObj;
+      final = normalObj;
   
       
-    // }
+    }
   }
   readFromLocalStorage();
 
@@ -74,6 +74,9 @@ function Names(name , age ,phone, frinedName){
 
     // console.log(createTableHeader);
 
+
+
+
     function createTableFooter(){
         let trEl = document.createElement('tr');
         tableEl.appendChild(trEl);
@@ -98,34 +101,35 @@ function Names(name , age ,phone, frinedName){
       }
 
       createTableHeader();
-    
 
       
-let myform = document.getElementById('myform');
-myform.addEventListener('submit' , addName);
+    let myform = document.getElementById('myform');
+    // myform.addEventListener('submit' , addName);
 
-function addName(event){
-  event.preventDefault();
-  let Name = event.target.Name.value;
-  let age = event.target.Age.value;
-  let phone = event.target.phone.value;
-  let frinedName = event.target.frinedName.value;
-  let newName = new Names(Name,age,phone,frinedName);
+    
+      myform.addEventListener('submit' , addName);
 
-  
-  newName.render();
+    function addName(event){
+      event.preventDefault();
+      let Name = event.target.Name.value;
+      let age = event.target.Age.value;
+      let phone = event.target.phone.value;
+      let frinedName = event.target.frinedName.value;
+      let newName = new Names(Name,age,phone,frinedName);
+     
 
-  saveToLocalStorage();
-
-
-}
-// myform.removeEventListener('submit' , addName);
-
-console.log(addName);
-
- createTableFooter();
-
-  //myform.removeEventListener('submit' , addName);
+      
+      newName.render();
+ 
+      saveToLocalStorage();
+    
+    
+    }
+    createTableFooter();
+    //  myform.removeEventListener('submit' , addName);
+    // createTableFooter();
+     
+    
 
 let fadi = new Names('fadi' , 23 , 2022358 , 'hala');
 fadi.render();
@@ -138,7 +142,4 @@ razan.render();
 
 let ahmad = new Names('ahmad' , 20, 3855555, 'leen');
 ahmad.render();
-
-
-
 
